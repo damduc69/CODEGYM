@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Sở Thích</title>
+    <style>
+      form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .button-group {
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button[type="reset"] {
+        background-color: #f44336;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Form Sở Thích Cá Nhân</h2>
+    <form action="#" method="post">
+      <label for="fullname">Họ và Tên:</label>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Nhập họ và tên của bạn"
+        required
+      />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Nhập email của bạn"
+        required
+      />
+
+      <label for="hobby">Sở Thích:</label>
+      <textarea
+        id="hobby"
+        name="hobby"
+        rows="4"
+        placeholder="Nhập sở thích của bạn"
+      ></textarea>
+
+      <div class="button-group">
+        <button type="submit">Gửi Thông Tin</button>
+        <button type="reset">Nhập Lại</button>
+      </div>
+    </form>
+  </body>
+</html>

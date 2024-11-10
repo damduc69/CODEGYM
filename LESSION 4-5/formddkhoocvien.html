@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Học Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .registration-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .registration-form h2 {
+            text-align: center;
+            color: #333333;
+        }
+        .registration-form label {
+            display: block;
+            margin: 8px 0 4px;
+        }
+        .registration-form input, 
+        .registration-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+        }
+        .registration-form .gender {
+            display: flex;
+            justify-content: space-between;
+        }
+        .registration-form .gender label {
+            margin: 0;
+        }
+        .registration-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .registration-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-form">
+        <h2>Đăng Ký Học Viên</h2>
+        <form action="#" method="POST">
+            <label for="fullname">Họ và Tên</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="birthdate">Ngày Sinh</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label>Giới Tính</label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="Nam" required> Nam</label>
+                <label><input type="radio" name="gender" value="Nữ" required> Nữ</label>
+                <label><input type="radio" name="gender" value="Khác" required> Khác</label>
+            </div>
+
+            <label for="address">Địa Chỉ</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="class">Lớp</label>
+            <select id="class" name="class" required>
+                <option value="">Chọn lớp</option>
+                <option value="Lớp 1">Lớp 1</option>
+                <option value="Lớp 2">Lớp 2</option>
+                <option value="Lớp 3">Lớp 3</option>
+                <option value="Lớp 4">Lớp 4</option>
+                <option value="Lớp 5">Lớp 5</option>
+                <option value="Lớp 6">Lớp 6</option>
+                <option value="Lớp 7">Lớp 7</option>
+                <option value="Lớp 8">Lớp 8</option>
+                <option value="Lớp 9">Lớp 9</option>
+                <option value="Lớp 10">Lớp 10</option>
+                <option value="Lớp 11">Lớp 11</option>
+                <option value="Lớp 12">Lớp 12</option>
+            </select>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Điện Thoại</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="submit">Đăng Ký</button>
+            <button type="reset">Nhập Lại</button>
+        </form>
+    </div>
+
+</body>
+</html>
