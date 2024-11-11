@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHUYỂN ĐỔI ĐỘ C SANG ĐỘ F</title>
+  </head>
+  <body>
+    <script>
+      // Hàm chuyển đổi Celsius sang Fahrenheit
+      function celsiusToFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      // Nhập giá trị độ C từ người dùng
+      var celsius = parseFloat(prompt("Enter celsius:"));
+
+      // Tính toán và hiển thị kết quả
+      var fahrenheit = celsiusToFahrenheit(celsius);
+      console.log(celsius + " độ C bằng " + fahrenheit + " độ F");
+      alert(celsius + " độ C bằng " + fahrenheit + " độ F");
+      document.write(celsius + " độ C bằng " + fahrenheit + " độ F");
+    </script>
+  </body>
+</html>
