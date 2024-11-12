@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TÍNH TỔNG CÁC SỐ CHẴN DƯƠNG VÀ HIỂN THỊ RA MH</title>
+  </head>
+  <body>
+    <script>
+      // Tính tổng tất cả các số chẵn dương trong dãy số sau: [-9, -8, -5, -2, 0, 1, 2, 4, 5]
+      // Sau đó, in kết quả ra màn hình cửa sổ lệnh console
+      let numbers = [-9, -8, -5, -2, 0, 1, 2, 4, 5];
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 0 && numbers[i] % 2 == 0) sum = sum + numbers[i];
+      }
+      console.log("Sum of even, possitive numbers is: " + sum);
+    </script>
+  </body>
+</html>
