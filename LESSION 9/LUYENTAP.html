@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECK A % B?</title>
+  </head>
+  <body>
+    <script>
+      //1. Ktra a chia hết cho b
+      // let a = Number(prompt("Nhập số a: "));
+      // let b = Number(prompt("Nhập số b: "));
+      // let c = a % b;
+      // if (c == 0) {
+      //     alert("a chia hết cho b");
+      // } else {
+      //     alert("a không chia hết cho b");
+      // }
+
+      //2.Nhâp vào tuổi và in ra kết quả
+      //Nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10
+      //   let age = Number(prompt("Nhập tuổi học sinh: "));
+      //   if (age >= 15) {
+      //     alert("Học sinh đó đủ điều kiện vào học lớp 10");
+      //   } else {
+      //     alert("Học sinh đó không đủ điều kiện vào học lớp 10");
+      //   }
+
+      //3.Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+      //   let number= Number(prompt("Nhập số nguyên: "));
+      //   if (number > 0) {
+      //     alert("Số nguyên đó lớn hơn 0");
+      //   } else if (number < 0) {
+      //     alert("Số nguyên đó nhỏ hơn 0");
+      //   } else {
+      //     alert("Số nguyên đó bằng 0");
+      //   }
+
+      //   4.Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+      // let a= Number(prompt("Nhập số a: "));
+      // let b= Number(prompt("Nhập số b: "));
+      // let c= Number(prompt("Nhập số c: "));
+      // if (a > b && a > c) {
+      //     alert("Số lớn nhất là: " + a);
+      // } else if (b > a && b > c) {
+      //     alert("Số lớn nhất là: " + b);
+      // } else {
+      //     alert("Số lớn nhất là: " + c);
+      // }
+
+      //5. Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+      //   let diemBaiKiemTra = Number(prompt("Nhập điểm bài kiểm tra: "));
+      //   let diemGiuaKy = Number(prompt("Nhập điểm giữa kỳ: "));
+      //   let diemCuoiKy = Number(prompt("Nhập điểm cuối kỳ: "));
+      //   let diemTrungBinh = (diemBaiKiemTra + diemGiuaKy + diemCuoiKy) / 3;
+      //   if (diemTrungBinh >= 8) {
+      //     alert("Học sinh đó xếp hạng A");
+      //   } else if (diemTrungBinh >= 6.5) {
+      //     alert("Học sinh đó xếp hạng B");
+      //   } else if (diemTrungBinh >= 5) {
+      //     alert("Học sinh đó xếp hạng C");
+      //   } else {
+      //     alert("Học sinh đó xếp hạng K");
+      //   }
+
+      //6.Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+      //   let doanhThu = Number(prompt("Nhập doanh thu: "));
+      //   let hoaHong = 0;
+      //   if (doanhThu >= 1000) {
+      //     hoaHong = doanhThu * 0.1;
+      //   } else if (doanhThu >= 500) {
+      //     hoaHong = doanhThu * 0.05;
+      //   } else {
+      //     hoaHong = 0;
+      //   }
+      //   alert("Hoa hồng nhận được: " + hoaHong);
+
+      //7.Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+      //Phí thuê bao bắt buộc là 25 nghìn.
+      // 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+      // 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+      // 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+      let thoiGianGoi = Number(prompt("Nhập thoi gian goi: "));
+      let phiThu = 25000;
+      if (thoiGianGoi <= 50) {
+        phiThu += 600 * thoiGianGoi;
+      } else if (thoiGianGoi <= 150) {
+        phiThu += 600 * 50 + 400 * (thoiGianGoi - 50);
+      } else {
+        phiThu += 600 * 50 + 400 * 100 + 200 * (thoiGianGoi - 150);
+      }
+      alert("Phi thu: " + phiThu);
+    </script>
+  </body>
+</html>

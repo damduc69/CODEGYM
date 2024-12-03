@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUYỆN TẬP 2</title>
+  </head>
+  <body>
+    <script>
+      //1. Hàm chuyển đổi Celsius sang Fahrenheit
+      //   function celsiusToFahrenheit(celsius) {
+      //     return (celsius * 9) / 5 + 32;
+      //   }
+
+      //   // Nhập giá trị độ C từ người dùng
+      //   var celsius = parseFloat(prompt("Enter celsius:"));
+
+      //   // Tính toán và hiển thị kết quả
+      //   var fahrenheit = celsiusToFahrenheit(celsius);
+      //   console.log(celsius + " độ C bằng " + fahrenheit + " độ F");
+      //   alert(celsius + " độ C bằng " + fahrenheit + " độ F");
+      //   document.write(celsius + " độ C bằng " + fahrenheit + " độ F");
+
+      //2.Chuyển từ mét sang feet
+      //   function metersToFeet(meters) {
+      //     return meters * 3.28084;
+      //   }
+      //   let meters = Number(prompt("Enter meters:"));
+      //   let feet = metersToFeet(meters);
+      //   console.log(meters + " meters bằng " + feet + " feet");
+      //   alert(meters + " meters bằng " + feet + " feet");
+      //   document.write(meters + " meters bằng " + feet + " feet");
+
+      //3.Tính diện tích hình vuông khi biết cạnh a.
+      //   let a = Number(prompt("Enter a:"));
+      //   let area = a * a;
+      //   console.log("Diện tích hình vuông bằng " + area);
+
+      //4. Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.
+      //   let a = Number(prompt("Enter a:"));
+      //   let b = Number(prompt("Enter b:"));
+      //   let area = a * b;
+      //   console.log("Diện tích hình vuông bằng " + area);
+
+      //5.Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.
+      //   let a = Number(prompt("Enter a:"));
+      //   let b = Number(prompt("Enter b:"));
+      //   let area = a * b / 2;
+      //   console.log("Diện tích hình vuông bằng " + area);
+
+      //6.Giải phương trình bậc 1.
+        let a = Number(prompt("Enter a:"));
+        let b = Number(prompt("Enter b:"));
+        let c = Number(prompt("Enter c:"));
+        let delta = b * b - 4 * a * c;
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        console.log("x1 = " + x1 + ", x2 = " + x2);
+    </script>
+  </body>
+</html>

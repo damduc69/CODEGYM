@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XÂY DỰNG LỚP HÌNH CHỮ NHẬT</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="200" height="100"></canvas><br />
+    <script>
+      let Rectangle = function (width, height) {
+        this.width = width;
+        this.height = height;
+        this.getWidth = function () {
+          return this.width;
+        };
+        this.getHeight = function () {
+          return this.height;
+        };
+        this.setWidth = function (width) {
+          this.width = width;
+        };
+        this.setHeight = function (height) {
+          this.height = height;
+        };
+        this.getArea = function () {
+          return this.width * this.height;
+        };
+        this.getPerimeter = function () {
+          return (this.width + this.height) * 2;
+        };
+      };
+      let rect = new Rectangle(10, 20);
+      let width = rect.getWidth();
+      let height = rect.getHeight();
+      let area = rect.getArea();
+      let perimeter = rect.getPerimeter();
+      //   console.log("Width: " + width);
+      //   console.log("Height: " + height);
+      //   console.log("Area: " + area);
+      //   console.log("Perimeter: " + perimeter);
+      document.write(
+        "Width: " +
+          width +
+          "<br>Height: " +
+          height +
+          "<br>Area: " +
+          area +
+          "<br>Perimeter: " +
+          perimeter
+      );
+
+      rect.setWidth(30);
+      rect.setHeight(40);
+      width = rect.getWidth();
+      height = rect.getHeight();
+      area = rect.getArea();
+      perimeter = rect.getPerimeter();
+      //   console.log("Width: " + width);
+      //   console.log("Height: " + height);
+      //   console.log("Area: " + area);
+      //   console.log("Perimeter: " + perimeter);
+      document.write(
+        "<br>Width: " +
+          width +
+          "<br>Height: " +
+          height +
+          "<br>Area: " +
+          area +
+          "<br>Perimeter: " +
+          perimeter
+      );
+
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
+      ctx.fillStyle = "red";
+      ctx.fillRect(10, 10, 200, 100);
+    </script>
+  </body>
+</html>

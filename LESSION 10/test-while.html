@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECK LOOP WHILE</title>
+  </head>
+  <body>
+    <script>
+      //1.
+      let num = prompt("Enter a number: ");
+      let total = 0;
+      while (num != -1) {
+        num = prompt("Enter a number: ");
+        alert(num);
+        total += num;
+      }
+      alert(total);
+
+      //2. Hiển thị thẻ <hr> từ 1 đến 100
+      let i = 1;
+      while (i < 100) {
+        document.write("<hr width = " + i + "%>");
+        i++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cờ Ca Rô 24x24</title>
+    <style>
+        #board { 
+            display: grid; 
+            grid-template-columns: repeat(24, 30px); /* 24 cột, mỗi ô có chiều rộng 30px */
+            grid-template-rows: repeat(24, 30px); /* 24 hàng, mỗi ô có chiều cao 30px */
+            gap: 2px; /* Khoảng cách giữa các ô */
+        }
+        .cell { 
+            width: 30px; 
+            height: 30px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-size: 18px; 
+            background-color: #f0f0f0; 
+            cursor: pointer; 
+            border: 1px solid #ccc;
+        }
+        .cell.X {
+        color: red; /* Màu đỏ cho X */
+    }
+    .cell.O {
+        color: blue; /* Màu xanh cho O */
+    }
+        #message { margin-top: 20px; font-size: 24px; }
+    </style>
+</head>
+<body>
+
+<h1>Cờ Ca Rô 24x24</h1>
+<div id="board"></div>
+<div id="message"></div>
+
+<script src="XO.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bouncing Ball Game</title>
+  <style>
+    canvas {
+      display: block;
+      margin: 50px auto;
+      border: 2px solid #000;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="600" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Kích thước và vị trí ban đầu
+    const gameWidth = canvas.width;
+    const gameHeight = canvas.height;
+
+    let paddleWidth = 100;
+    let paddleHeight = 15;
+    let paddleX = (gameWidth - paddleWidth) / 2;
+    const paddleSpeed = 10;
+
+    const ballSize = 20;
+    let ballX = gameWidth / 2;
+    let ballY = gameHeight / 2;
+    let ballSpeedX = 3;
+    let ballSpeedY = 3;
+
+    // Danh sách chướng ngại vật
+    const obstacles = [
+      { x: 200, y: 150, width: 100, height: 20, speed: 2 },
+      { x: 50, y: 100, width: 120, height: 20, speed: 1.5 },
+      { x: 350, y: 200, width: 80, height: 20, speed: 2.5 }
+    ];
+
+    let keys = {};
+
+    // Lắng nghe sự kiện bàn phím
+    document.addEventListener("keydown", (event) => (keys[event.key] = true));
+    document.addEventListener("keyup", (event) => (keys[event.key] = false));
+
+    // Hàm vẽ thanh đỡ
+    function drawPaddle() {
+      ctx.fillStyle = "#007bff";
+      ctx.fillRect(paddleX, gameHeight - paddleHeight - 10, paddleWidth, paddleHeight);
+    }
+
+    // Hàm vẽ quả bóng
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(ballX, ballY, ballSize / 2, 0, Math.PI * 2);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    // Hàm vẽ chướng ngại vật
+    function drawObstacles() {
+      ctx.fillStyle = "#ff5733";
+      obstacles.forEach((obstacle) => {
+        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+      });
+    }
+
+    // Hàm di chuyển thanh đỡ
+    function movePaddle() {
+      if (keys["ArrowLeft"] && paddleX > 0) {
+        paddleX -= paddleSpeed;
+      }
+      if (keys["ArrowRight"] && paddleX < gameWidth - paddleWidth) {
+        paddleX += paddleSpeed;
+      }
+    }
+
+    // Hàm cập nhật vị trí quả bóng
+    function updateBallPosition() {
+      ballX += ballSpeedX;
+      ballY += ballSpeedY;
+
+      // Kiểm tra va chạm với tường
+      if (ballX - ballSize / 2 <= 0 || ballX + ballSize / 2 >= gameWidth) {
+        ballSpeedX *= -1;
+      }
+      if (ballY - ballSize / 2 <= 0) {
+        ballSpeedY *= -1;
+      }
+
+      // Kiểm tra va chạm với thanh đỡ
+      if (
+        ballY + ballSize / 2 >= gameHeight - paddleHeight - 10 &&
+        ballX >= paddleX &&
+        ballX <= paddleX + paddleWidth
+      ) {
+        ballSpeedY *= -1;
+      }
+
+      // Kiểm tra va chạm với từng chướng ngại vật
+      obstacles.forEach((obstacle) => {
+        if (
+          ballY + ballSize / 2 >= obstacle.y &&
+          ballY - ballSize / 2 <= obstacle.y + obstacle.height &&
+          ballX + ballSize / 2 >= obstacle.x &&
+          ballX - ballSize / 2 <= obstacle.x + obstacle.width
+        ) {
+          ballSpeedY *= -1;
+        }
+      });
+
+      // Kiểm tra thua cuộc
+      if (ballY - ballSize / 2 > gameHeight) {
+        alert("Game Over!");
+        resetGame();
+      }
+    }
+
+    // Hàm cập nhật vị trí các chướng ngại vật
+    function updateObstaclePositions() {
+      obstacles.forEach((obstacle) => {
+        obstacle.x += obstacle.speed;
+        if (obstacle.x <= 0 || obstacle.x + obstacle.width >= gameWidth) {
+          obstacle.speed *= -1;
+        }
+      });
+    }
+
+    // Hàm reset trò chơi
+    function resetGame() {
+      ballX = gameWidth / 2;
+      ballY = gameHeight / 2;
+      ballSpeedX = 3;
+      ballSpeedY = 3;
+      paddleX = (gameWidth - paddleWidth) / 2;
+    }
+
+    // Hàm vẽ toàn bộ trò chơi
+    function draw() {
+      ctx.clearRect(0, 0, gameWidth, gameHeight);
+      drawPaddle();
+      drawBall();
+      drawObstacles();
+    }
+
+    // Vòng lặp trò chơi
+    function gameLoop() {
+      movePaddle();
+      updateBallPosition();
+      updateObstaclePositions();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    // Bắt đầu trò chơi
+    gameLoop();
+  </script>
+</body>
+</html>

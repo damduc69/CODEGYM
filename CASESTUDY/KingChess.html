@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+        }
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            grid-template-rows: repeat(8, 80px);
+            border: 2px solid white;
+        }
+        .tile {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .dark {
+            background-color: #769656;
+        }
+        .light {
+            background-color: #eeeed2;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="chessboard"></div>
+    <script src="chess.js"></script>
+</body>
+</html>

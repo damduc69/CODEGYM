@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Di chuyển Nobita bằng phím</title>
+    <style>
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      } */
+      .nobita {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+        transition: top 0.1s, left 0.1s; /* Giúp di chuyển mượt mà hơn */
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png"
+      alt="Nobita"
+      class="nobita"
+      id="nobita"
+    />
+
+    <script>
+      // Lấy đối tượng hình ảnh Nobita
+      const nobita = document.getElementById("nobita");
+      let topPosition = 50; // Tọa độ top ban đầu (50% của trang)
+      let leftPosition = 50; // Tọa độ left ban đầu (50% của trang)
+      const moveStep = 5; // Số bước di chuyển mỗi lần nhấn phím
+
+      // Hàm xử lý sự kiện khi nhấn phím
+      function moveNobita(event) {
+        switch (event.key) {
+          case "ArrowUp":
+            topPosition -= moveStep;
+            break;
+          case "ArrowDown":
+            topPosition += moveStep;
+            break;
+          case "ArrowLeft":
+            leftPosition -= moveStep;
+            break;
+          case "ArrowRight":
+            leftPosition += moveStep;
+            break;
+        }
+        // Giới hạn tọa độ để Nobita không di chuyển ra ngoài màn hình
+        topPosition = Math.max(0, Math.min(topPosition, 100));
+        leftPosition = Math.max(0, Math.min(leftPosition, 100));
+
+        // Cập nhật vị trí của Nobita
+        nobita.style.top = `${topPosition}%`;
+        nobita.style.left = `${leftPosition}%`;
+      }
+
+      // Lắng nghe sự kiện nhấn phím trên trang
+      window.addEventListener("keydown", moveNobita);
+    </script>
+  </body>
+</html>

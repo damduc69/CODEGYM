@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+    <!-- <script src="./script.js"></script> -->
+  </head>
+  <body>
+    <input
+      type="number"
+      id="numberA"
+      name="numberA"
+      placeholder="Mời bạn nhập số A"
+    /><br />
+    <input
+      type="number"
+      id="numberB"
+      name="numberB"
+      placeholder="Mời bạn nhập số B"
+    /><br />
+    <p id="result"></p>
+
+    <button onclick="calculateSum()">Tính tổng 2 số A, B</button>
+
+    <!-- <button onclick="calculateSum()">Bấm tui đi, tui tính tổng 2 số cho bạn coi nè!</button>
+    <button onclick="calculateSum()">Bấm tui đi, tui cũng tính tổng đc nè</button> -->
+
+    <script>
+      function calculateSum() {
+        let a = Number(document.getElementById("numberA").value);
+        let b = Number(document.getElementById("numberB").value);
+        // let a = Number(document.querySelector("input[name=numberA]").value);
+        // let b = Number(document.querySelector("input[name=numberB]").value);
+
+        document.getElementById("result").innerHTML =
+          "Tổng của a, b là: " + (a + b);
+      }
+    </script>
+
+    <!-- <script>
+      function calculateSum() {
+        let a = Number(prompt("Nhập số a: "));
+        let b = Number(prompt("Nhập số b: "));
+        let sum = a + b;
+        alert("Tổng của a, b là: " + sum);
+      }
+    </script> -->
+  </body>
+</html>

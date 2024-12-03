@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ĐẢO NGƯỢC CÁC PHẦN TỬ TRONG MẢNG</title>
+  </head>
+  <body>
+    <script>
+      let arr = [-3, 5, 1, 3, 2, 10];
+      let first = 0,
+        last = arr.length - 1;
+      let temp = null;
+      while (first < last) {
+        temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+      }
+      document.write(arr);
+
+      // for (let i = arr.length - 1; i >= 0; i--) {
+      //   reverseArr.push(arr[i]);
+      // }
+      // document.write(reverseArr);
+    </script>
+  </body>
+</html>

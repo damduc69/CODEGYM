@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TẠO LỚP STUDENT VÀ IN RA MÀN HÌNH</title>
+  </head>
+  <body>
+    <script>
+      class Student {
+        constructor(id, name, age, email, phone) {
+          this.id = id;
+          this.name = name;
+          this.age = age;
+          this.email = email;
+          this.phone = phone;
+        }
+        getId() {
+          return this.id;
+        }
+        setId(id) {
+            
+          this.id = id;
+        }
+        getName() {
+          getName();
+          return this.name;
+        }
+        setName(name) {
+          this.name = name;
+        }
+        getAge() {
+          return this.age;
+        }
+        setAge(age) {
+          this.age = age;
+        }
+        getEmail() {
+          return this.email;
+        }
+        setEmail(email) {
+          this.email = email;
+        }
+        getPhone() {
+          return this.phone;
+        }
+        setPhone(phone) {
+          this.phone = phone;
+        }
+
+        study() {
+          console.log("Studying...");
+        }
+        takeExam() {
+          console.log("Taking an exam...");
+        }
+        getResult() {
+          console.log("Getting result...");
+        }
+      }
+
+      let studentA = new Student(
+        1,
+        "Long",
+        20,
+        "3pE8wI@example.com",
+        "40123456789"
+      );
+      let studentB = new Student(
+        2,
+        "Long",
+        21,
+        "2pE8wI@example.com",
+        "50123456789"
+      );
+      let studentC = new Student(
+        3,
+        "Long",
+        22,
+        "1pE8wI@example.com",
+        "60123456789"
+      );
+
+      console.log(studentA);
+      console.log(studentB);
+      console.log(studentC);
+    </script>
+  </body>
+</html>

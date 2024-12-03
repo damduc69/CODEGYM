@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ĐẢO NGƯỢC CÁC KÝ TỰ</title>
+  </head>
+  <body>
+    <script>
+      //Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+      //Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ]
+      //sau khi thực hiện đảo ngược sẽ là "162csc"
+      //cách 1:
+      let charsArr = ["c", "s", "c", "2", "6", "1"];
+      let first = 0,
+        last = charsArr.length - 1,
+        temp = null;
+      while (first < last) {
+        temp = charsArr[first];
+        charsArr[first] = charsArr[last];
+        charsArr[last] = temp;
+        first++;
+        last--;
+      }
+      console.log(charsArr);
+      let reverseString = charsArr.join("");
+      console.log(reverseString);
+
+      //cách 2:
+      let charsArr2 = ["c", "s", "c", "2", "6", "1"];
+      let reverseString2 = "";
+      for (let i = charsArr2.length - 1; i >= 0; i--) {
+        reverseString2 += charsArr2[i];
+      }
+      console.log(reverseString2);
+    </script>
+  </body>
+</html>

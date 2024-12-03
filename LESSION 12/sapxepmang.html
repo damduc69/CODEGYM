@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SẮP XẾP MẢNG</title>
+  </head>
+  <body>
+    <script>
+      //sắp xếp mảng
+      let names = ["Bình", "An", "Dạo", "Cường", "Em"];
+      console.log(names);
+      names.sort(); //alphabet increasing order
+      console.log(names);
+      // names.reverse();//alphabet decreasing order
+      // names.sort((a, b) => (a > b ? -1 : 1));//alphabet decreasing order
+      names.sort((a, b) => b.localeCompare(a)); //alphabet decreasing order
+      console.log(names);
+
+      //let numbers = [33, 4, 1111, 222];
+      // numbers.sort();//wrong order
+      // numbers.sort(function (a, b) {
+      //   return a - b;
+      // }); //increasing order
+      //numbers.sort(function (a, b) {
+      //return b - a;
+      //}); //decreasing order
+      //console.log(numbers);
+    </script>
+  </body>
+</html>

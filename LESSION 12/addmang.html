@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADD PHẦN TỬ TRONG MẢNG</title>
+  </head>
+  <body>
+    <script>
+      let cars = ["BMW", "Audi", "Merc"];
+      cars.unshift("Volvo"); //thêm vào đầu mảng
+      console.log(cars);
+      cars.push("Ford"); //thêm vào cúi mảng
+      console.log(cars);
+      cars.splice(1, 0, "Mazda");
+      console.log(cars);
+      cars.splice(4, 0, "Porsche", "Toyota");
+      console.log(cars);
+    </script>
+  </body>
+</html>
