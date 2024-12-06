@@ -1,0 +1,13 @@
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: gray;
+    background: url(ball.jpg);
+  }
+  #game2 {
+    background-color: rgb(255, 255, 255);
+    margin-top: 10rem;
+  }

@@ -57,7 +57,7 @@
         width: 40,
         height: 40,
         color: "blue",
-        speed: 5,
+        speed: 10,
         dx: 0,
       };
 
@@ -117,7 +117,9 @@
               bullets.splice(j, 1);
               score++;
               hitSound.play();
-              document.getElementById("info").innerText = `Score: ${score} | Lives: ${lives}`;
+              document.getElementById(
+                "info"
+              ).innerText = `Score: ${score} | Lives: ${lives}`;
               break;
             }
           }
@@ -127,7 +129,9 @@
             zombies.splice(i, 1);
             lives--;
             loseLifeSound.play();
-            document.getElementById("info").innerText = `Score: ${score} | Lives: ${lives}`;
+            document.getElementById(
+              "info"
+            ).innerText = `Score: ${score} | Lives: ${lives}`;
             if (lives <= 0) {
               alert("Game Over! Final Score: " + score);
               window.location.reload();
